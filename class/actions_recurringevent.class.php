@@ -79,7 +79,7 @@ class ActionsRecurringEvent
      * @param   HookManager     $hookmanager    Hook manager propagated to allow calling another hook
      * @return  int                             < 0 on error, 0 on success, 1 to replace standard code
      */
-	public function formAddObjectLine($parameters, &$object, &$action, $hookmanager)
+	public function formObjectOptions($parameters, &$object, &$action, $hookmanager)
     {
         global $langs;
 
