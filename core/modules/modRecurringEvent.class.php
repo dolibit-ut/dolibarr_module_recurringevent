@@ -92,6 +92,7 @@ class modRecurringEvent extends DolibarrModules
             'hooks' => array(
                 'externalaccesspage'
                 , 'externalaccess'
+                , 'actioncard'
             )
             , 'triggers' => 1
         );
