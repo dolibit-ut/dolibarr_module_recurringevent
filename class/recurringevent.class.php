@@ -262,27 +262,29 @@ class RecurringEvent extends SeedObject
     }
 
     /**
-     * @param User $user User object
+     * @param 	User 	$user 		User object
+	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
      * @return int
      */
-    public function save($user)
+    public function save($user, $notrigger = false)
     {
-        return $this->create($user);
+        return $this->create($user, $notrigger);
     }
 
     /**
      * Function to create object in database
      *
-     * @param   User    $user   user object
-     * @return  int                < 0 if ko, > 0 if ok
+     * @param   User    $user   	user object
+	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
+     * @return  int                 < 0 if ko, > 0 if ok
      */
-    public function create(User &$user)
+    public function create(User &$user, $notrigger = false)
     {
         if ($this->cleanParams() > 0)
         {
-            if($this->id > 0) return parent::create($user);
+            if($this->id > 0) return parent::create($user, $notrigger);
 
-            $res = parent::create($user);
+            $res = parent::create($user, $notrigger);
 
             if (empty($this->skip_generate_recurring)) $this->generateRecurring();
 
@@ -295,10 +297,11 @@ class RecurringEvent extends SeedObject
     /**
      * Function to update object or create or delete if needed
      *
-     * @param   User    $user   user object
-     * @return  int                < 0 if ko, > 0 if ok
+     * @param   User    $user   	user object
+	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
+     * @return  int                 < 0 if ko, > 0 if ok
      */
-    public function update(User &$user)
+    public function update(User &$user, $notrigger = false)
     {
         if ($this->cleanParams() > 0)
         {
@@ -311,14 +314,14 @@ class RecurringEvent extends SeedObject
                 if (!empty($this->fk_actioncomm_master)) $this->fk_actioncomm_master = 0;
 
 
-                $res = parent::update($user);
+                $res = parent::update($user, $notrigger);
 
                 // Diff found !
                 // TODO delete Actioncomm
                 $TChild = $this->getAllChainFromMaster();
                 foreach ($TChild as $child)
                 {
-                    $r = $child->delete();
+                    $r = $child->delete($notrigger);
 //                    var_dump($r);exit;
                 }
 //var_dump(count($TChild));
@@ -336,23 +339,24 @@ class RecurringEvent extends SeedObject
     }
 
     /**
-     * @param User $user User object
-     * @return int
+     * @param 	User 	$user 		User object
+	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
+     * @return  int
      */
-    public function delete(User &$user)
+    public function delete(User &$user, $notrigger = false)
     {
         // TODO passer des param supplémentaire pour s'il ne faut delete que l'objet courant et conserver les events suivant (attention : penser au transfert de master)
         $TChild = $this->getAllChainFromMaster();
         foreach ($TChild as $child)
         {
             // Attention, il s'agit d'un objet ActionComm de Dolibarr, le jour où le paramètre $user sera ajouté, il faudra mettre cette ligne à jour
-            $child->delete();
+            $child->delete($notrigger);
         }
 
         $this->deleteObjectLinked();
 
         unset($this->fk_element); // avoid conflict with standard Dolibarr comportment
-        return parent::delete($user);
+        return parent::delete($user, $notrigger);
     }
 
 
@@ -474,9 +478,10 @@ class RecurringEvent extends SeedObject
 
     /**
      * TODO Refactor is needed
-     * @return int
+	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
+     * @return  int
      */
-    private function generateRecurring()
+    private function generateRecurring($notrigger = false)
     {
         global $user;
 
@@ -493,7 +498,7 @@ class RecurringEvent extends SeedObject
                     while ($current_date = strtotime('+'.$this->frequency.' '.$this->frequency_unit, $current_date))
                     {
                         if ($current_date > $this->end_date) break;
-                        $this->createRecurring($user, $actioncommMaster, $current_date, $delta);
+                        $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                     }
                 }
                 else
@@ -502,7 +507,7 @@ class RecurringEvent extends SeedObject
                     while ($end_occurrence--)
                     {
                         $current_date = strtotime('+'.$this->frequency.' '.$this->frequency_unit, $current_date);
-                        $this->createRecurring($user, $actioncommMaster, $current_date, $delta);
+                        $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                     }
                 }
             }
@@ -519,7 +524,7 @@ class RecurringEvent extends SeedObject
                             $actioncommMaster->datep = $current_date;
                             $actioncommMaster->datef = $current_date + $delta;
                             $actioncommMaster->context['recurringevent_skip_trigger_create'] = true;
-                            $actioncommMaster->update($user);
+                            $actioncommMaster->update($user, $notrigger);
                             break;
                         }
                     }
@@ -534,7 +539,7 @@ class RecurringEvent extends SeedObject
                         $weekday_index = date('w', $current_date);
                         if (in_array($weekday_index, $this->weekday_repeat))
                         {
-                            $this->createRecurring($user, $actioncommMaster, $current_date, $delta);
+                            $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                         }
                     }
                 }
@@ -547,7 +552,7 @@ class RecurringEvent extends SeedObject
                         $weekday_index = date('w', $current_date);
                         if (in_array($weekday_index, $this->weekday_repeat))
                         {
-                            $this->createRecurring($user, $actioncommMaster, $current_date, $delta);
+                            $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                             $end_occurrence--;
                         }
                     }
@@ -562,12 +567,13 @@ class RecurringEvent extends SeedObject
 
     /**
      * @param User $user Object
+	 * @param bool $notrigger false=launch triggers after, true=disable triggers
      * @param ActionComm $actioncommMaster Object
      * @param int $current_date timestamp
      * @param int $delta event duration in seconds
      * @return void
      */
-    private function createRecurring($user, $actioncommMaster, $current_date, $delta)
+    private function createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta)
     {
         /** @var ActionComm $ac */
         $ac = dol_clone($actioncommMaster);
@@ -576,7 +582,7 @@ class RecurringEvent extends SeedObject
         $ac->datep = $current_date;
         $ac->datef = $current_date + $delta;
         $ac->context['recurringevent_skip_trigger_create'] = true;
-        $ac->create($user);
+        $ac->create($user, $notrigger);
 
         /** @var RecurringEvent $re */
         $re = dol_clone($this);
@@ -585,6 +591,6 @@ class RecurringEvent extends SeedObject
         $re->fk_actioncomm = $ac->id;
         $re->fk_actioncomm_master = $actioncommMaster->id;
         $re->skip_generate_recurring = true;
-        $re->save($user);
+        $re->save($user, $notrigger);
     }
 }
