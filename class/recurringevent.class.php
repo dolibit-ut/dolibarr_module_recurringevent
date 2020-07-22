@@ -489,7 +489,10 @@ class RecurringEvent extends SeedObject
         if ($actioncommMaster->fetch($this->fk_actioncomm) > 0)
         {
             $current_date = $actioncommMaster->datep;
-            $delta = $actioncommMaster->datef - $current_date;
+	        $delta=0;
+	        if (!empty($actioncommMaster->datef)) {
+		        $delta = $actioncommMaster->datef - $current_date;
+	        }
 
             if ($this->frequency_unit !== 'week')
             {
@@ -522,7 +525,9 @@ class RecurringEvent extends SeedObject
                         if (in_array($weekday_index, $this->weekday_repeat))
                         {
                             $actioncommMaster->datep = $current_date;
-                            $actioncommMaster->datef = $current_date + $delta;
+                            if (!empty($delta)) {
+	                            $actioncommMaster->datef = $current_date + $delta;
+                            }
                             $actioncommMaster->context['recurringevent_skip_trigger_create'] = true;
                             $actioncommMaster->update($user, $notrigger);
                             break;
@@ -580,7 +585,9 @@ class RecurringEvent extends SeedObject
         $ac->db = $this->db; // Reinit database connector
         $ac->id = null;
         $ac->datep = $current_date;
-        $ac->datef = $current_date + $delta;
+        if (!empty($delta)) {
+	        $ac->datef = $current_date + $delta;
+        }
         $ac->context['recurringevent_skip_trigger_create'] = true;
         $ac->create($user, $notrigger);
 

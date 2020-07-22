@@ -102,9 +102,9 @@ class ActionsRecurringEvent
                         <label class="custom-control-label" for="toggle-recurrence">'.$langs->trans('RecurringEventDefineEventAsRecurrent').'</label>
                     </div>
                 </div>
-                
+
                 <div id="recurring-options" class="form-group my-3 '.(!empty($recurringEvent->id) ? '' : 'd-none').'">
-                
+
                     <div class="form-row my-3 pl-4">
                         <div class="col-auto">
                             <label for="country">'.$langs->trans('RecurringEventRepeatEventEach').'</label>
@@ -121,7 +121,7 @@ class ActionsRecurringEvent
                             </select>
                         </div>
                     </div>
-                    
+
                     <fieldset id="recurring-day-of-week" class="form-group pl-4">
                         <div class="row">
                             <legend class="col-form-label col-sm-2 pt-0">'.$langs->trans('RecurringEventRepeatThe').'</legend>
@@ -143,7 +143,7 @@ class ActionsRecurringEvent
                                     <label class="custom-control-label" for="customCheckJeu">'.$langs->trans('RecurringEventThursdayShort').'</label>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-3">
                                 <div class="form-check custom-control custom-checkbox">
                                     <input type="checkbox" '.(!empty($recurringEvent->id) && in_array(5, $recurringEvent->weekday_repeat) ? 'checked' : '').' class="custom-control-input" id="customCheckVen" name="weekday_repeat[]" value="5">
@@ -160,7 +160,7 @@ class ActionsRecurringEvent
                             </div>
                         </div>
                     </fieldset>
-                        
+
                     <fieldset class="form-group pl-4">
                         <div class="row">
                             <legend class="col-form-label col-sm-2">'.$langs->trans('RecurringEventFinishAt').'</legend>
@@ -183,7 +183,7 @@ class ActionsRecurringEvent
                             </div>
                         </div>
                     </fieldset>
-                    
+
                 </div>
                 <!-- FIN form récurrence -->
                 ';
@@ -200,14 +200,14 @@ class ActionsRecurringEvent
 
             $this->resprints = '
                 <tr class="trextrafieldseparator trextrafieldseparator_recurringevent_start"><td colspan="2"><strong>'.$langs->trans('RecurringEventSeparatorStart').'</strong></td></tr>
-                
+
                 <tr id="" class="recurringevent">
                     <td class=""><b>'.$langs->trans('RecurringEventDefineEventAsRecurrent').'</b></td>
                     <td id="" class="action_extras_agf_site" colspan="3">
                         <input id="" onchange="$(\'.recurring-options\').toggleClass(\'hideobject\')" name="is_recurrent" type="checkbox" class="custom-control-input" '.(!empty($recurringEvent->id) ? 'checked' : '').'>
                     </td>
                 </tr>
-                
+
                 <tr id="recurringevent-select-weekday" class="recurringevent recurring-options '.(!empty($recurringEvent->id) ? '' : 'hideobject').'">
                     <td class="">'.$langs->trans('RecurringEventRepeatEventEach').'</td>
                     <td id="" class="action_extras_agf_site" colspan="3">
@@ -220,7 +220,7 @@ class ActionsRecurringEvent
                         </select>
                     </td>
                 </tr>
-              
+
                 <tr id="recurring-day-of-week" class="recurringevent recurring-options '.(!empty($recurringEvent->id) ? '' : 'hideobject').'">
                     <td class="">'.$langs->trans('RecurringEventRepeatThe').'</td>
                     <td id="" class="" colspan="3">
@@ -242,7 +242,7 @@ class ActionsRecurringEvent
                                 <label class="custom-control-label" for="customCheckJeu">'.$langs->trans('RecurringEventThursdayShort').'</label>
                             </div>
                         </div>
-                        
+
                         <div class="pull-left minwidth100">
                             <div class="form-check custom-control custom-checkbox">
                                 <input type="checkbox" '.(!empty($recurringEvent->id) && in_array(5, $recurringEvent->weekday_repeat) ? 'checked' : '').' class="custom-control-input" id="customCheckVen" name="weekday_repeat[]" value="5">
@@ -259,7 +259,7 @@ class ActionsRecurringEvent
                         </div>
                     </td>
                 </tr>
-                
+
                 <tr id="" class="recurringevent recurring-options '.(!empty($recurringEvent->id) ? '' : 'hideobject').'">
                     <td class="">'.$langs->trans('RecurringEventFinishAt').'</td>
                     <td id="" class="action_extras_agf_site" colspan="3">
@@ -282,7 +282,7 @@ class ActionsRecurringEvent
                         </div>
                     </td>
                 </tr>
-                
+
                 <tr class="trextrafieldseparator trextrafieldseparator_recurringevent_end"><td colspan="2"></td></tr>
             ';
         }

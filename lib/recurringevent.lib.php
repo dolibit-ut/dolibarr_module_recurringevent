@@ -34,10 +34,10 @@ function recurringeventAdminPrepareHead()
     $h = 0;
     $head = array();
 
-    $head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_setup.php", 1);
+    /*$head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_setup.php", 1);
     $head[$h][1] = $langs->trans("Parameters");
     $head[$h][2] = 'settings';
-    $h++;
+    $h++;*/
     $head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_extrafields.php", 1);
     $head[$h][1] = $langs->trans("ExtraFields");
     $head[$h][2] = 'extrafields';
@@ -75,13 +75,13 @@ function recurringevent_prepare_head(RecurringEvent $object)
     $head[$h][1] = $langs->trans("RecurringEventCard");
     $head[$h][2] = 'card';
     $h++;
-	
+
 	// Show more tabs from modules
     // Entries must be declared in modules descriptor with line
     // $this->tabs = array('entity:+tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__');   to add new tab
     // $this->tabs = array('entity:-tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__');   to remove a tab
     complete_head_from_modules($conf, $langs, $object, $head, $h, 'recurringevent');
-	
+
 	return $head;
 }
 

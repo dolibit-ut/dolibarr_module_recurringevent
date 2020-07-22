@@ -44,7 +44,7 @@ class modRecurringEvent extends DolibarrModules
 
 		$this->editor_name = 'ATM-Consulting';
 		$this->editor_url = 'https://www.atm-consulting.fr';
-		
+
 		// Id for module (must be unique).
 		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
 		$this->numero = 104903; // 104000 to 104999 for ATM CONSULTING
@@ -68,7 +68,7 @@ class modRecurringEvent extends DolibarrModules
 		// If file is in theme/yourtheme/img directory under name object_pictovalue.png, use this->picto='pictovalue'
 		// If file is in module/img directory under name object_pictovalue.png, use this->picto='pictovalue@module'
 		$this->picto='recurringevent@recurringevent';
-		
+
 		// Defined all module parts (triggers, login, substitutions, menus, css, etc...)
 		// for default path (eg: /recurringevent/core/xxxxx) (0=disable, 1=enable)
 		// for specific path of parts (eg: /recurringevent/core/modules/barcode)
@@ -102,7 +102,7 @@ class modRecurringEvent extends DolibarrModules
 		$this->dirs = array();
 
 		// Config pages. Put here list of php page, stored into recurringevent/admin directory, to use to setup module.
-		$this->config_page_url = array("recurringevent_setup.php@recurringevent");
+		$this->config_page_url = array("recurringevent_about.php@recurringevent");
 
 		// Dependencies
 		$this->hidden = false;			// A condition to hide module
@@ -194,7 +194,7 @@ class modRecurringEvent extends DolibarrModules
 		$this->rights[$r][4] = 'read';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
 		$this->rights[$r][5] = '';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
 		$r++;
-		
+
 		$this->rights[$r][0] = $this->numero . $r;	// Permission id (must not be already used)
 		$this->rights[$r][1] = 'recurringevent_write';	// Permission label
 		$this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
@@ -245,7 +245,7 @@ class modRecurringEvent extends DolibarrModules
 		//							'target'=>'',
 		//							'user'=>2);				                // 0=Menu for internal users, 1=external users, 2=both
 		// $r++;
-		
+
 /*
 		$this->menu[$r]=array(
 			'fk_menu'=>0,			                // Put 0 if this is a top menu
@@ -312,7 +312,7 @@ class modRecurringEvent extends DolibarrModules
 		);				                // 0=Menu for internal users, 1=external users, 2=both
 		$r++;
 */
-		
+
 		// Exports
 		$r=1;
 
@@ -342,7 +342,7 @@ class modRecurringEvent extends DolibarrModules
 	public function init($options = '')
 	{
 		$sql = array();
-		
+
 		define('INC_FROM_DOLIBARR', true);
 
 		require dol_buildpath('/recurringevent/script/create-maj-base.php');

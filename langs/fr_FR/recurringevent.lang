@@ -1,12 +1,12 @@
-Module104903Name = RecurringEvent
-Module104903Desc = RecurringEvent Description
+Module104903Name = Evénement récurrent
+Module104903Desc = Gestion de la récurrence des événements
 
 ATMAbout = Ce module a été développé par <a href="http://www.atm-consulting.fr" target="_blank">ATM Consulting</a><br>Vous pouvez retrouver la documentation sur notre <a href="http://wiki.atm-consulting.fr/index.php/Accueil" target="_blank">wiki</a><br><br>Pour toute question technique ou retour, contactez-nous sur <a href="mailto:support@atm-consulting.fr">support@atm-consulting.fr</a><br><br>Pour toute question commerciale, contactez-nous sur <a href="mailto:contact@atm-consulting.fr">contact@atm-consulting.fr</a> ou au +33 9 77 19 50 70<br><br>Retrouvez nos autres modules sur <a href="http://www.dolistore.com/search.php?orderby=position&orderway=desc&search_query=atm&submit_search=Rechercher" target="_blank">Dolistore</a>
 
 RecurringEventSetup = Configuration du module RecurringEvent
 RecurringEventAbout = A propos du module RecurringEvent
 
-RecurringEvent=RecurringEvent
+RecurringEvent=Evénement récurrent
 AbricotNeedUpdate=Le module abricot doit être mis à jour
 
 # SETUP
@@ -14,6 +14,8 @@ ParamLabel=Nom du paramètre
 ParamDesc=Une description si besoin
 ParamHelp=Le contenu de l'aide
 
+#Card via hook
+RecurringEventSeparatorStart=Gestion de la récurrence
 
 # Hook externalaccess for agefodd
 RecurringEventDefineEventAsRecurrent=Définir des options de récurrence
@@ -34,3 +36,4 @@ RecurringEventThursdayShort=Jeu.
 RecurringEventFridayShort=Ven.
 RecurringEventSaturdayShort=Sam.
 RecurringEventSundayShort=Dim.
+
