@@ -5,3 +5,12 @@ ATMAbout = This module has been developed by <a href="http://www.atm-consulting.
 
 RecurringEventSetup = RecurringEvent module setup
 RecurringEventAbout = About RecurringEvent
+
+
+RecurringEventMondayShort = Monday
+RecurringEventTuesdayShort = Tuesday
+RecurringEventWednesdayShort = Wednesday
+RecurringEventThursdayShort = Thursday
+RecurringEventFridayShort = Friday
+RecurringEventSaturdayShort = Saturday
+RecurringEventSundayShort = Sunday
