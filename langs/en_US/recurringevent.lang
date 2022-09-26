@@ -7,6 +7,13 @@ RecurringEventSetup = RecurringEvent module setup
 RecurringEventAbout = About RecurringEvent
 
 
+# SETUP
+ParamLabel = Parameter Label
+ParamDesc  = Parameter Description
+ParamHelp  = Parameter Help
+
+
+# Weekdays
 RecurringEventMondayShort = Monday
 RecurringEventTuesdayShort = Tuesday
 RecurringEventWednesdayShort = Wednesday
