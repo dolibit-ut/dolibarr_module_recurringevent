@@ -18,11 +18,11 @@
 
 if (!class_exists('SeedObject'))
 {
-    /**
-     * Needed if $form->showLinkedObjectBlock() is call or for session timeout on our module page
-     */
-    define('INC_FROM_DOLIBARR', true);
-    require_once dirname(__FILE__).'/../config.php';
+	/**
+	*	Needed if $form->showLinkedObjectBlock() is call or for session timeout on our module page
+	*/
+	define('INC_FROM_DOLIBARR', true);
+	require_once dirname(__FILE__).'/../config.php';
 }
 
 
@@ -37,12 +37,12 @@ class RecurringEvent extends SeedObject
     /** @var int $isextrafieldmanaged Enable the fictionalises of extrafields */
     public $isextrafieldmanaged = 0;
 
-    /** @var int $ismultientitymanaged 0=No test on entity, 1=Test with field entity, 2=Test with link by societe */
+    /** @var int $ismultientitymanaged 	0 = No test on entity, 1 = Test with field entity, 2 = Test with link by societe */
     public $ismultientitymanaged = 1;
 
-    /**
-     *  1. 'type' is the field format.
-     *  2. 'label' the translation key.
+	/**
+     *  1. 'type' is the field format
+     *  2. 'label' the translation key
      *  3. 'enabled' is a condition when the field must be managed - (0 or 1)
      *  4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
      *  5. 'noteditable' says if field is not editable (1 or 0)
