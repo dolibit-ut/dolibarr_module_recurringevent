@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,9 +17,9 @@
  */
 
 /**
- *      \file       admin/recurringevent_extrafields.php
- *		\ingroup    recurringevent
- *		\brief      Page to setup extra fields of recurringevent
+ *  \file       admin/recurringevent_extrafields.php
+ *  \ingroup    recurringevent
+ *  \brief      Page to setup extra fields of recurringevent
  */
 
 $res = @include '../../main.inc.php'; // From htdocs directory
@@ -30,6 +31,7 @@ if (! $res) {
 /*
  * Config of extrafield page for RecurringEvent
  */
+
 require_once '../lib/recurringevent.lib.php';
 require_once '../class/recurringevent.class.php';
 $langs->loadLangs(array('recurringevent@recurringevent', 'admin', 'other'));
@@ -44,7 +46,6 @@ $pageTitle = $langs->trans('RecurringEventExtrafieldPage');
 
 // Configuration header
 $head = recurringeventAdminPrepareHead();
-
 
 
 /*
