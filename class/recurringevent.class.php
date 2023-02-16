@@ -41,10 +41,10 @@ class RecurringEvent extends SeedObject
     public $ismultientitymanaged = 1;
 
 	/**
-     *  1. 'type' is the field format
-     *  2. 'label' the translation key
-     *  3. 'enabled' is a condition when the field must be managed - (0 or 1)
-     *  4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
+     *  1. 'type' 	is the field format
+     *  2. 'label' 	the translation key
+     *  3. 'enabled' 	is a condition when the field must be managed - (0 or 1)
+     *  4. 'visible' 	says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2 = Visible on list only, 3 = Visible on create/update/view form only (not list), 4 = Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
      *  5. 'noteditable' says if field is not editable (1 or 0)
      *  6. 'notnull' is set to 1 if not null in database. Set to -1 if we must set data to null if empty ('' or 0).
      *  7. 'default' is a default value for creation (can still be replaced by the global setup of default values)
@@ -53,7 +53,7 @@ class RecurringEvent extends SeedObject
      * 10. 'position' is the sort order of field.
      * 11. 'searchall' is 1 if we want to search in this field when making a search from the quick search button.
      * 12. 'isameasure' must be set to 1 if you want to have a total on list for this field. Field type must be summable like integer or double(24,8).
-     *  'css' is the CSS style to use on field. For example: 'maxwidth200'
+     * 13. 'css' is the CSS style to use on field. For example: 'maxwidth200'
      *  'help' is a string visible as a tooltip on field
      *  'comment' is not used. You can store here any text of your choice. It is not used by application.
      *  'showoncombobox' if value of the field must be visible into the label of the combobox that list record
