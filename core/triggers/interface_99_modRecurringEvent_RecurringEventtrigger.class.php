@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -140,10 +141,10 @@ class InterfaceRecurringEventtrigger
                 "Trigger '" . $this->name . "' for action '$action' launched by " . __FILE__ . ". id=" . $object->id
             );
 
-            // TODO
-            // Gérer la récurrence
-            // Il faut créer une classe, qui gèrera une table d'association entre l'event Dolibarr
-            // et le paramétrage de la récurrence ... to be continued
+            // TODO:
+            // Manage recurrence
+            // You have to create a class, which will manage an association table between the Dolibarr event
+            // and the recurrence setting ... to be continued
             if (GETPOSTISSET('is_recurrent'))
             {
                 if (!defined('INC_FROM_DOLIBARR')) define('INC_FROM_DOLIBARR', 1);
