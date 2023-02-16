@@ -10,12 +10,12 @@ RecurringEvent = Evénement récurrent
 AbricotNeedUpdate = Le module abricot doit être mis à jour
 
 # SETUP
-ParamLabel=Nom du paramètre
-ParamDesc=Une description si besoin
-ParamHelp=Le contenu de l'aide
+ParamLabel = Nom du paramètre
+ParamDesc = Une description si besoin
+ParamHelp = Le contenu de l'aide
 
-#Card via hook
-RecurringEventSeparatorStart=Gestion de la récurrence
+# Card via hook
+RecurringEventSeparatorStart = Gestion de la récurrence
 
 # Hook externalaccess for agefodd
 RecurringEventDefineEventAsRecurrent=Définir des options de récurrence
@@ -29,6 +29,7 @@ RecurringEventFinishAt=Se termine :
 RecurringEventThe=Le
 RecurringEventAfter=Après
 RecurringEventoccurrences=occurrences
+
 RecurringEventMondayShort=Lun.
 RecurringEventTuesdayShort=Mar.
 RecurringEventWednesdayShort=Mer.
