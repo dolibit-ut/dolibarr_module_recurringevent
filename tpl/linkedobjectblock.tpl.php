@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 // Protection to avoid direct call of template
@@ -35,7 +36,9 @@ $linkedObjectBlock = $GLOBALS['linkedObjectBlock'];
 $langs->load("recurringevent@recurringevent");
 echo '<br>';
 print load_fiche_titre($langs->trans("RecurringEventRelated"));
+
 ?>
+
 <table class="noborder allwidth">
 <tr class="liste_titre">
 	<td><?php echo $langs->trans("Ref"); ?></td>
@@ -44,13 +47,16 @@ print load_fiche_titre($langs->trans("RecurringEventRelated"));
 	<td class="right"><?php echo $langs->trans("Status"); ?></td>
 	<td></td>
 </tr>
+
 <?php
+	
 $var=true;
 $total=0;
 foreach($linkedObjectBlock as $key => $objectlink)
 {
 	$var=!$var;
 ?>
+	
 <tr <?php echo $GLOBALS['bc'][$var]; ?> >
     <td><?php echo $objectlink->getNomUrl(1); ?></td>
 	<td class="center"><?php echo $objectlink->label; ?></td>
@@ -58,6 +64,7 @@ foreach($linkedObjectBlock as $key => $objectlink)
 	<td class="right"><?php echo $objectlink->getLibStatut(0); ?></td>
 	<td class="right"><a href="<?php echo $_SERVER["PHP_SELF"].'?id='.$objectlink->id.'&action=dellink&dellinkid='.$key; ?>"><?php echo img_delete($langs->transnoentitiesnoconv("RemoveLink")); ?></a></td>
 </tr>
+	
 <?php
 }
 ?>
