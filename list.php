@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 require 'config.php';
@@ -22,7 +23,6 @@ if(empty($user->rights->recurringevent->read)) accessforbidden();
 
 $langs->load('abricot@abricot');
 $langs->load('recurringevent@recurringevent');
-
 
 $massaction = GETPOST('massaction', 'alpha');
 $confirmmassaction = GETPOST('confirmmassaction', 'alpha');
@@ -48,7 +48,7 @@ if ($reshook < 0) setEventMessages($hookmanager->error, $hookmanager->errors, 'e
 
 if (!GETPOST('confirmmassaction', 'alpha') && $massaction != 'presend' && $massaction != 'confirm_presend')
 {
-    $massaction = '';
+	$massaction = '';
 }
 
 
@@ -64,15 +64,15 @@ if (empty($reshook))
 
 llxHeader('', $langs->trans('RecurringEventList'), '', '');
 
-//$type = GETPOST('type');
-//if (empty($user->rights->recurringevent->all->read)) $type = 'mine';
+// $type = GETPOST('type');
+// if (empty($user->rights->recurringevent->all->read)) $type = 'mine';
 
 // ToDo:  add the fields of your object that you want to display
 $keys = array_keys($object->fields);
 $fieldList = 't.'.implode(', t.', $keys);
 if (!empty($object->isextrafieldmanaged))
 {
-    $keys = array_keys($extralabels);
+	$keys = array_keys($extralabels);
 	if(!empty($keys)) {
 		$fieldList .= ', et.' . implode(', et.', $keys);
 	}
@@ -89,12 +89,12 @@ $sql.= ' FROM '.MAIN_DB_PREFIX.'recurringevent t ';
 
 if (!empty($object->isextrafieldmanaged))
 {
-    $sql.= ' LEFT JOIN '.MAIN_DB_PREFIX.'recurringevent_extrafields et ON (et.fk_object = t.rowid)';
+	$sql.= ' LEFT JOIN '.MAIN_DB_PREFIX.'recurringevent_extrafields et ON (et.fk_object = t.rowid)';
 }
 
 $sql.= ' WHERE 1=1';
-//$sql.= ' AND t.entity IN ('.getEntity('RecurringEvent', 1).')';
-//if ($type == 'mine') $sql.= ' AND t.fk_user = '.$user->id;
+// $sql.= ' AND t.entity IN ('.getEntity('RecurringEvent', 1).')';
+// if ($type == 'mine') $sql.= ' AND t.fk_user = '.$user->id;
 
 // Add where from hooks
 $parameters=array('sql' => $sql);
@@ -108,13 +108,13 @@ if (empty($nbLine)) $nbLine = !empty($user->conf->MAIN_SIZE_LISTE_LIMIT) ? $user
 
 $r = new Listview($db, 'recurringevent');
 echo $r->render($sql, array(
-	'view_type' => 'list' // default = [list], [raw], [chart]
-    ,'allow-fields-select' => true
-	,'limit'=>array(
+	'view_type' => 'list' // default = [list], [raw], [chart],
+	'allow-fields-select' => true,
+	'limit'=>array(
 		'nbLine' => $nbLine
-	)
-    ,'list' => array(
-        'title' => $langs->trans('RecurringEventList')
+		),
+	'list' => array(
+		'title' => $langs->trans('RecurringEventList')
         ,'image' => 'title_generic.png'
         ,'picto_precedent' => '<'
         ,'picto_suivant' => '>'
