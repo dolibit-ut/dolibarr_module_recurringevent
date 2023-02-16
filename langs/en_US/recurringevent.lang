@@ -12,3 +12,11 @@ RecurringEventAbout = About RecurringEvent
 ParamLabel = Name of parameter
 ParamDesc = A description if needed
 ParamHelp = The content of the help
+
+RecurringEventMondayShort=Lun.
+RecurringEventTuesdayShort=Mar.
+RecurringEventWednesdayShort=Mer.
+RecurringEventThursdayShort=Jeu.
+RecurringEventFridayShort=Ven.
+RecurringEventSaturdayShort=Sam.
+RecurringEventSundayShort=Dim.
