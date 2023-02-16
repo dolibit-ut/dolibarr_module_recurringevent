@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 if (!class_exists('SeedObject'))
@@ -40,9 +40,9 @@ class RecurringEvent extends SeedObject
     public $ismultientitymanaged = 1;
 
     /**
-     * 1. 'type' is the field format.
-     * 2. 'label' the translation key.
-     * 3. 'enabled' is a condition when the field must be managed - (0 or 1)
+     *  1. 'type' is the field format.
+     *  2. 'label' the translation key.
+     *  3. 'enabled' is a condition when the field must be managed - (0 or 1)
      * 4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
      * 5. 'noteditable' says if field is not editable (1 or 0)
      * 6. 'notnull' is set to 1 if not null in database. Set to -1 if we must set data to null if empty ('' or 0).
@@ -102,9 +102,8 @@ class RecurringEvent extends SeedObject
         'frequency_unit' => array(
             'type' => 'varchar(50)',
             'label' => 'FrequencyUnit',
-		            'enabled' => 1,
+            'enabled' => 1,
             'visible' => 1,
-
             'position' => 50,
             'index' => 0,
         ),
@@ -112,8 +111,8 @@ class RecurringEvent extends SeedObject
         'weekday_repeat' => array(
             'type' => 'array',
             'label' => 'WeekdayRepeat',
-            'visible' => 1,
             'enabled' => 1,
+            'visible' => 1,
             'position' => 60,
             'index' => 0,
             'help' => 'UsedOnlyIfUnitIsWeek',
@@ -122,8 +121,9 @@ class RecurringEvent extends SeedObject
         'end_type' => array(
             'type' => 'varchar(30)',
             'label' => 'EndType',
+	            'enabled' => 1,
             'visible' => 1,
-            'enabled' => 1,
+
             'position' => 70,
             'index' => 0,
         ),
