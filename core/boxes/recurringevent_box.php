@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,15 +13,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 /**
- * 	\file		core/boxes/mybox.php
+ * 	\file		core/boxes/recurringevent_box.php
  * 	\ingroup	recurringevent
  * 	\brief		This file is a sample box definition file
- * 				Put some comments here
+ * 	
  */
+
 include_once DOL_DOCUMENT_ROOT . "/core/boxes/modules_boxes.php";
 
 /**
@@ -29,7 +31,7 @@ include_once DOL_DOCUMENT_ROOT . "/core/boxes/modules_boxes.php";
 class recurringeventbox extends ModeleBoxes
 {
 
-    public $boxcode = "mybox";
+    public $boxcode = "recurringevent";
     public $boximg = "recurringevent@recurringevent";
     public $boxlabel;
     public $depends = array("recurringevent");
