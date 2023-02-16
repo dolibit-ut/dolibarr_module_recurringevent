@@ -7,6 +7,6 @@ RecurringEventSetup = RecurringEvent module setup
 RecurringEventAbout = About RecurringEvent
 
 # SETUP
-ParamLabel=Nom du paramètre
+ParamLabel = Name of parameter
 ParamDesc=Une description si besoin
 ParamHelp=Le contenu de l'aide
