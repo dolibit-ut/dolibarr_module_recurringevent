@@ -151,7 +151,7 @@ echo $r->render($sql, array(
 	)
 	,'eval'=>array(
 		'ref' => '_getObjectNomUrl(\'@rowid@\', \'@val@\')'
-//		,'fk_user' => '_getUserNomUrl(@val@)' // Si on a un fk_user dans notre requête
+//		,'fk_user' => '_getUserNomUrl(@val@)'  // If we have a fk_user in our query / request
 	)
 ));
 
