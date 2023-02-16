@@ -5,3 +5,8 @@ ATMAbout = This module has been developed by <a href="http://www.atm-consulting.
 
 RecurringEventSetup = RecurringEvent module setup
 RecurringEventAbout = About RecurringEvent
+
+# SETUP
+ParamLabel=Nom du paramètre
+ParamDesc=Une description si besoin
+ParamHelp=Le contenu de l'aide
