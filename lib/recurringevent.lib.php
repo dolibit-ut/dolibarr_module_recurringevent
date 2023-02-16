@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 /**
@@ -49,11 +50,9 @@ function recurringeventAdminPrepareHead()
 
     // Show more tabs from modules
     // Entries must be declared in modules descriptor with line
-    //$this->tabs = array(
-    //	'entity:+tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__'
+    //$this->tabs = array(    //	'entity:+tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__'
     //); // to add new tab
-    //$this->tabs = array(
-    //	'entity:-tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__'
+    //$this->tabs = array(    //	'entity:-tabname:Title:@recurringevent:/recurringevent/mypage.php?id=__ID__'
     //); // to remove a tab
     complete_head_from_modules($conf, $langs, $object, $head, $h, 'recurringevent');
 
