@@ -6,8 +6,8 @@ ATMAbout = Ce module a été développé par <a href="http://www.atm-consulting.
 RecurringEventSetup = Configuration du module RecurringEvent
 RecurringEventAbout = A propos du module RecurringEvent
 
-RecurringEvent=Evénement récurrent
-AbricotNeedUpdate=Le module abricot doit être mis à jour
+RecurringEvent = Evénement récurrent
+AbricotNeedUpdate = Le module abricot doit être mis à jour
 
 # SETUP
 ParamLabel=Nom du paramètre
