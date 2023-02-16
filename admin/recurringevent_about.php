@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,15 +13,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 /**
- * 	\file		admin/about.php
+ * 	\file		admin/recurringevent_about.php
  * 	\ingroup	recurringevent
  * 	\brief		This file is an example about page
- * 				Put some comments here
+ * 
  */
+
 // Dolibarr environment
 $res = @include '../../main.inc.php'; // From htdocs directory
 if (! $res) {
@@ -39,9 +41,11 @@ if (! $user->admin) {
     accessforbidden();
 }
 
+
 /*
  * View
  */
+
 $page_name = 'RecurringEventAbout';
 llxHeader('', $langs->trans($page_name));
 
