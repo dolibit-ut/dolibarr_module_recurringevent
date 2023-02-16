@@ -67,7 +67,7 @@ llxHeader('', $langs->trans('RecurringEventList'), '', '');
 //$type = GETPOST('type');
 //if (empty($user->rights->recurringevent->all->read)) $type = 'mine';
 
-// TODO ajouter les champs de son objet que l'on souhaite afficher
+// ToDo:  add the fields of your object that you want to display
 $keys = array_keys($object->fields);
 $fieldList = 't.'.implode(', t.', $keys);
 if (!empty($object->isextrafieldmanaged))
