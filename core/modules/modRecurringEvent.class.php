@@ -20,16 +20,16 @@
  *	\defgroup	recurringevent     Module RecurringEvent
  *	\brief		Example of a module descriptor.
  *				Such a file must be copied into htdocs/recurringevent/core/modules directory.
- *	\file       htdocs/recurringevent/core/modules/modRecurringEvent.class.php
- *	\ingroup    recurringevent
- *	\brief      Description and activation file for module RecurringEvent
+ *	\file		htdocs/recurringevent/core/modules/modRecurringEvent.class.php
+ *	\ingroup	recurringevent
+ *	\brief		Description and activation file for module RecurringEvent
  */
 
 include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
 
 
 /**
- *  Description and activation class for module RecurringEvent
+ *	Description and activation class for module RecurringEvent
  */
 class modRecurringEvent extends DolibarrModules
 {
@@ -99,11 +99,11 @@ class modRecurringEvent extends DolibarrModules
 		//                        );
 		$this->module_parts = array(
             'hooks' => array(
-                'externalaccesspage'
-                , 'externalaccess'
-                , 'actioncard'
-            )
-            , 'triggers' => 1
+				'externalaccesspage',
+				'externalaccess',
+				'actioncard'
+            	),
+			'triggers' => 1
         );
 
 		// Data directories to create when module is enabled.
@@ -135,10 +135,7 @@ class modRecurringEvent extends DolibarrModules
         //                              'objecttype:-tabname:NU:conditiontoremove');                                                     											// To remove an existing tab identified by code tabname
 		// where objecttype can be
 		// 'categories_x'	  to add a tab in category view (replace 'x' by type of category (0=product, 1=supplier, 2=customer, 3=member)
-		// 'contact'          to add a tab in contact view
-		// 'contract'         to add a tab in contract view
-		// 'group'            to add a tab in group view
-		// 'intervention'     to add a tab in intervention view
+		// 'contact'   // 'contract'  	// 'group'    // 'intervention'     to add a tab in intervention view
 		// 'invoice'          to add a tab in customer invoice view
 		// 'invoice_supplier' to add a tab in supplier invoice view
 		// 'member'           to add a tab in fundation member view
