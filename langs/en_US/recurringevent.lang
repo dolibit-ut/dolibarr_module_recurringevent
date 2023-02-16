@@ -8,5 +8,5 @@ RecurringEventAbout = About RecurringEvent
 
 # SETUP
 ParamLabel = Name of parameter
-ParamDesc=Une description si besoin
+ParamDesc = A description if needed
 ParamHelp=Le contenu de l'aide
