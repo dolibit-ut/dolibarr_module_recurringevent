@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,9 +44,9 @@ class RecurringEvent extends SeedObject
      *  1. 'type' is the field format.
      *  2. 'label' the translation key.
      *  3. 'enabled' is a condition when the field must be managed - (0 or 1)
-     * 4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
-     * 5. 'noteditable' says if field is not editable (1 or 0)
-     * 6. 'notnull' is set to 1 if not null in database. Set to -1 if we must set data to null if empty ('' or 0).
+     *  4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
+     *  5. 'noteditable' says if field is not editable (1 or 0)
+     *  6. 'notnull' is set to 1 if not null in database. Set to -1 if we must set data to null if empty ('' or 0).
      *  'default' is a default value for creation (can still be replaced by the global setup of default values)
      *  'index' if we want an index in database.
      *  'foreignkey'=>'tablename.field' if the field is a foreign key (it is recommanded to name the field fk_...).
@@ -121,9 +122,8 @@ class RecurringEvent extends SeedObject
         'end_type' => array(
             'type' => 'varchar(30)',
             'label' => 'EndType',
-	            'enabled' => 1,
+            'enabled' => 1,
             'visible' => 1,
-
             'position' => 70,
             'index' => 0,
         ),
@@ -131,8 +131,8 @@ class RecurringEvent extends SeedObject
         'end_date' => array(
             'type' => 'date',
             'label' => 'EndType',
-            'visible' => 1,
             'enabled' => 1,
+            'visible' => 1,
             'position' => 80,
             'index' => 0,
         ),
@@ -140,8 +140,8 @@ class RecurringEvent extends SeedObject
         'end_occurrence' => array(
             'type' => 'integer',
             'label' => 'EndOccurrence',
-            'visible' => 1,
             'enabled' => 1,
+            'visible' => 1,
             'position' => 90,
             'index' => 0,
         ),
@@ -149,8 +149,9 @@ class RecurringEvent extends SeedObject
         'actioncomm_datep' => array(
             'type' => 'date',
             'label' => 'ActioncommDatep',
+	            'enabled' => 1,
             'visible' => 1,
-            'enabled' => 1,
+
             'position' => 150,
             'index' => 0,
         ),
