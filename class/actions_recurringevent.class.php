@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,19 +13,20 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 /**
- * \file    class/actions_recurringevent.class.php
- * \ingroup recurringevent
- * \brief   This file is an example hook overload class file
- *          Put some comments here
+ *	\file		class/actions_recurringevent.class.php
+ *	\ingroup	recurringevent
+ *	\brief		This file is an example hook overload class file
+ * 
  */
 
 /**
  * Class ActionsRecurringEvent
  */
+
 class ActionsRecurringEvent
 {
     /**
@@ -185,7 +187,7 @@ class ActionsRecurringEvent
                     </fieldset>
 
                 </div>
-                <!-- FIN form récurrence -->
+                <!-- END form recurrence -->
                 ';
             }
 
