@@ -28,17 +28,18 @@
  */
 function recurringeventAdminPrepareHead()
 {
-    global $langs, $conf;
+	global $langs, $conf;
 
-    $langs->load('recurringevent@recurringevent');
+	$langs->load('recurringevent@recurringevent');
 
-    $h = 0;
-    $head = array();
+	$h = 0;
+	$head = array();
 
-    /*$head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_setup.php", 1);
-    $head[$h][1] = $langs->trans("Parameters");
-    $head[$h][2] = 'settings';
-    $h++;*/
+    // $head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_setup.php", 1);
+    // $head[$h][1] = $langs->trans("Parameters");
+    // $head[$h][2] = 'settings';
+    // $h++;
+	
     $head[$h][0] = dol_buildpath("/recurringevent/admin/recurringevent_extrafields.php", 1);
     $head[$h][1] = $langs->trans("ExtraFields");
     $head[$h][2] = 'extrafields';
