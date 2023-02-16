@@ -51,8 +51,8 @@ class RecurringEvent extends SeedObject
      *  8. 'index' if we want an index in database.
      *  9. 'foreignkey'=>'tablename.field' if the field is a foreign key (it is recommanded to name the field fk_...).
      * 10. 'position' is the sort order of field.
-     *  'searchall' is 1 if we want to search in this field when making a search from the quick search button.
-     *  'isameasure' must be set to 1 if you want to have a total on list for this field. Field type must be summable like integer or double(24,8).
+     * 11. 'searchall' is 1 if we want to search in this field when making a search from the quick search button.
+     * 12. 'isameasure' must be set to 1 if you want to have a total on list for this field. Field type must be summable like integer or double(24,8).
      *  'css' is the CSS style to use on field. For example: 'maxwidth200'
      *  'help' is a string visible as a tooltip on field
      *  'comment' is not used. You can store here any text of your choice. It is not used by application.
@@ -60,15 +60,15 @@ class RecurringEvent extends SeedObject
      *  'arraykeyval' to set list of value if type is a list of predefined values. For example: array("0"=>"Draft","1"=>"Active","-1"=>"Cancel")
      */
 
-    public $fields = array(
+	public $fields = array(
 
-        'entity' => array(
-            'type' => 'integer',
+		'entity' => array(
+			'type' 	=> 'integer',
             'label' => 'Entity',
             'enabled' => 1,
             'visible' => 0,
             'notnull' => 1,
-		            'default' => 1,
+            'default' => 1,
             'index' => 1,
             'position' => 10
         ),
@@ -149,9 +149,8 @@ class RecurringEvent extends SeedObject
         'actioncomm_datep' => array(
             'type' => 'date',
             'label' => 'ActioncommDatep',
-	            'enabled' => 1,
+			'enabled' => 1,
             'visible' => 1,
-
             'position' => 150,
             'index' => 0,
         ),
@@ -159,6 +158,7 @@ class RecurringEvent extends SeedObject
         'actioncomm_datef' => array(
             'type' => 'date',
             'label' => 'ActioncommDatef',
+			
             'visible' => 1,
             'enabled' => 1,
             'position' => 160,
