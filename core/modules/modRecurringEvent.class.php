@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (C) 2019 ATM Consulting <support@atm-consulting.fr>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -12,17 +13,18 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 /**
- * 	\defgroup   recurringevent     Module RecurringEvent
- *  \brief      Example of a module descriptor.
+ *	\defgroup	recurringevent     Module RecurringEvent
+ *	\brief		Example of a module descriptor.
  *				Such a file must be copied into htdocs/recurringevent/core/modules directory.
- *  \file       htdocs/recurringevent/core/modules/modRecurringEvent.class.php
- *  \ingroup    recurringevent
- *  \brief      Description and activation file for module RecurringEvent
+ *	\file       htdocs/recurringevent/core/modules/modRecurringEvent.class.php
+ *	\ingroup    recurringevent
+ *	\brief      Description and activation file for module RecurringEvent
  */
+
 include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
 
 
@@ -63,7 +65,7 @@ class modRecurringEvent extends DolibarrModules
 		$this->description = "Description of module RecurringEvent";
 		
 		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = '1.0.0';
+		$this->version = '2022.1.0';
 		
 		// Key used in llx_const table to save module status enabled/disabled (where RECURRINGEVENT is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
@@ -112,10 +114,10 @@ class modRecurringEvent extends DolibarrModules
 		$this->config_page_url = array("recurringevent_about.php@recurringevent");
 
 		// Dependencies
-		$this->hidden = false;			// A condition to hide module
-		$this->depends = array();		// List of modules id that must be enabled if this module is enabled
-		$this->requiredby = array();	// List of modules id to disable if this one is disabled
-		$this->conflictwith = array();	// List of modules id this module is in conflict with
+		$this->hidden = false;				// A condition to hide module
+		$this->depends = array();			// List of modules id that must be enabled if this module is enabled
+		$this->requiredby = array();		// List of modules id to disable if this one is disabled
+		$this->conflictwith = array();		// List of modules id this module is in conflict with
 		$this->phpmin = array(5,0);					// Minimum version of PHP required by module
 		$this->need_dolibarr_version = array(4,0);	// Minimum version of Dolibarr required by module
 		$this->langfiles = array("recurringevent@recurringevent");
@@ -128,9 +130,9 @@ class modRecurringEvent extends DolibarrModules
 		$this->const = array();
 
 		// Array to add new pages in new tabs
-		// Example: $this->tabs = array('objecttype:+tabname1:Title1:recurringevent@recurringevent:$user->rights->recurringevent->read:/recurringevent/mynewtab1.php?id=__ID__',  	// To add a new tab identified by code tabname1
-        //                              'objecttype:+tabname2:Title2:recurringevent@recurringevent:$user->rights->othermodule->read:/recurringevent/mynewtab2.php?id=__ID__',  	// To add another new tab identified by code tabname2
-        //                              'objecttype:-tabname:NU:conditiontoremove');                                                     						// To remove an existing tab identified by code tabname
+		// Example: $this->tabs = array('objecttype:+tabname1:Title1:recurringevent@recurringevent:$user->rights->recurringevent->read:/recurringevent/mynewtab1.php?id=__ID__',	// To add a new tab identified by code tabname1
+        //                              'objecttype:+tabname2:Title2:recurringevent@recurringevent:$user->rights->othermodule->read:/recurringevent/mynewtab2.php?id=__ID__',		// To add another new tab identified by code tabname2
+        //                              'objecttype:-tabname:NU:conditiontoremove');                                                     											// To remove an existing tab identified by code tabname
 		// where objecttype can be
 		// 'categories_x'	  to add a tab in category view (replace 'x' by type of category (0=product, 1=supplier, 2=customer, 3=member)
 		// 'contact'          to add a tab in contact view
@@ -198,9 +200,9 @@ class modRecurringEvent extends DolibarrModules
 /*
 		$this->rights[$r][0] = $this->numero . $r;
 		$this->rights[$r][1] = 'recurringevent_read';
-		$this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
-		$this->rights[$r][4] = 'read';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
-		$this->rights[$r][5] = '';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
+		$this->rights[$r][3] = 1; 
+		$this->rights[$r][4] = 'read';	
+		$this->rights[$r][5] = '';
 		$r++;
 
 		$this->rights[$r][0] = $this->numero . $r;	// Permission id (must not be already used)
@@ -226,12 +228,12 @@ class modRecurringEvent extends DolibarrModules
 		//
 		// Example to declare a new Top Menu entry and its Left menu entry:
 		// $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=recurringevent',		// Put 0 if this is a single top menu or keep fk_mainmenu to give an entry on left
-		//							'type'=>'top',			                // This is a Top menu entry
+		//							'type'=>'top',									// This is a Top menu entry
 		//							'titre'=>'RecurringEvent top menu',
 		//							'mainmenu'=>'recurringevent',
-		//							'leftmenu'=>'recurringevent_left',			// This is the name of left menu for the next entries
+		//							'leftmenu'=>'recurringevent_left',				// This is the name of left menu for the next entries
 		//							'url'=>'/recurringevent/pagetop.php',
-		//							'langs'=>'recurringevent@recurringevent',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+		//							'langs'=>'recurringevent@recurringevent',		// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 		//							'position'=>100,
 		//							'enabled'=>'$conf->recurringevent->enabled',	// Define condition to show or hide menu entry. Use '$conf->recurringevent->enabled' if entry must be visible if module is enabled.
 		//							'perms'=>'1',			                // Use 'perms'=>'$user->rights->recurringevent->level1->level2' if you want your menu with a permission rules
