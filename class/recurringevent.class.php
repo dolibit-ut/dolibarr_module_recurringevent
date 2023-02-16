@@ -47,10 +47,10 @@ class RecurringEvent extends SeedObject
      *  4. 'visible' says if field is visible in list (Examples: 0 = Not visible, 1 = Visible on list and create/update/view forms, 2=Visible on list only, 3=Visible on create/update/view form only (not list), 4=Visible on list and update/view form only (not create). Using a negative value means field is not shown by default on list but can be selected for viewing)
      *  5. 'noteditable' says if field is not editable (1 or 0)
      *  6. 'notnull' is set to 1 if not null in database. Set to -1 if we must set data to null if empty ('' or 0).
-     *  'default' is a default value for creation (can still be replaced by the global setup of default values)
-     *  'index' if we want an index in database.
-     *  'foreignkey'=>'tablename.field' if the field is a foreign key (it is recommanded to name the field fk_...).
-     *  'position' is the sort order of field.
+     *  7. 'default' is a default value for creation (can still be replaced by the global setup of default values)
+     *  8. 'index' if we want an index in database.
+     *  9. 'foreignkey'=>'tablename.field' if the field is a foreign key (it is recommanded to name the field fk_...).
+     * 10. 'position' is the sort order of field.
      *  'searchall' is 1 if we want to search in this field when making a search from the quick search button.
      *  'isameasure' must be set to 1 if you want to have a total on list for this field. Field type must be summable like integer or double(24,8).
      *  'css' is the CSS style to use on field. For example: 'maxwidth200'
@@ -67,8 +67,8 @@ class RecurringEvent extends SeedObject
             'label' => 'Entity',
             'enabled' => 1,
             'visible' => 0,
-            'default' => 1,
             'notnull' => 1,
+		            'default' => 1,
             'index' => 1,
             'position' => 10
         ),
