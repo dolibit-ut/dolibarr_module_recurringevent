@@ -75,8 +75,8 @@ class RecurringEvent extends SeedObject
         'fk_actioncomm' => array(
             'type' => 'integer:Actioncomm:comm/action/class/actioncomm.class.php',
             'label' => 'Actioncomm',
-            'visible' => 1,
             'enabled' => 1,
+            'visible' => 1,
             'position' => 20,
             'index' => 1,
         ),
@@ -84,8 +84,9 @@ class RecurringEvent extends SeedObject
         'fk_actioncomm_master' => array(
             'type' => 'integer:Actioncomm:comm/action/class/actioncomm.class.php',
             'label' => 'ActioncommMaster',
-            'visible' => 1,
             'enabled' => 1,
+            'visible' => 1,
+
             'position' => 30,
             'index' => 1,
         ),
