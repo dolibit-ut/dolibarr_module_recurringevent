@@ -17,6 +17,7 @@
 
 /**
  * Script créant et vérifiant que les champs requis s'ajoutent bien
+ * Script creating and checking that the required fields are added
  */
 
 if(!defined('INC_FROM_DOLIBARR')) {
