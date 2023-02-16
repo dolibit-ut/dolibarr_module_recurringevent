@@ -60,13 +60,13 @@ class RecurringEvent extends SeedObject
      *  'arraykeyval' to set list of value if type is a list of predefined values. For example: array("0"=>"Draft","1"=>"Active","-1"=>"Cancel")
      */
 
-	public $fields = array(
+		public $fields = array(
 
 		'entity' => array(
 			'type' 	=> 'integer',
-            'label' => 'Entity',
-            'enabled' => 1,
-            'visible' => 0,
+			'label' => 'Entity',
+			'enabled' => 1,
+			'visible' => 0,
             'notnull' => 1,
             'default' => 1,
             'index' => 1,
@@ -158,20 +158,20 @@ class RecurringEvent extends SeedObject
         'actioncomm_datef' => array(
             'type' => 'date',
             'label' => 'ActioncommDatef',
-			
+            'enabled' => 1,			
             'visible' => 1,
-            'enabled' => 1,
             'position' => 160,
             'index' => 0,
         ),
 
-//        'fk_user_valid' =>array(
-//            'type' => 'integer',
-//            'label' => 'UserValidation',
-//            'enabled' => 1,
-//            'visible' => -1,
-//            'position' => 512
-//        ),
+/**     'fk_user_valid' =>array(
+            'type' => 'integer',
+            'label' => 'UserValidation',
+            'enabled' => 1,
+            'visible' => -1,
+            'position' => 512
+        ),
+*/
 
         'import_key' => array(
             'type' => 'varchar(14)',
@@ -300,7 +300,7 @@ class RecurringEvent extends SeedObject
      * Function to update object or create or delete if needed
      *
      * @param   User    $user   	user object
-	 * @param	bool	$notrigger	false=launch triggers after, true=disable triggers
+	 * @param	bool	$notrigger	false = launch triggers after, true=disable triggers
      * @return  int                 < 0 if ko, > 0 if ok
      */
     public function update(User &$user, $notrigger = false)
