@@ -321,7 +321,7 @@ class RecurringEvent extends SeedObject
                 $TChild = $this->getAllChainFromMaster();
                 foreach ($TChild as $child)
                 {
-                    $r = $child->delete($notrigger);
+                    $r = $child->delete($user, $notrigger);
 //                    var_dump($r);exit;
                 }
 //var_dump(count($TChild));
@@ -350,7 +350,7 @@ class RecurringEvent extends SeedObject
         foreach ($TChild as $child)
         {
             // Attention, il s'agit d'un objet ActionComm de Dolibarr, le jour où le paramètre $user sera ajouté, il faudra mettre cette ligne à jour
-            $child->delete($notrigger);
+            $child->delete($user, $notrigger);
         }
 
         $this->deleteObjectLinked();
