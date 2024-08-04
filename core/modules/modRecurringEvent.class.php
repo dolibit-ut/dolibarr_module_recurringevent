@@ -147,7 +147,7 @@ class modRecurringEvent extends DolibarrModules
         $this->tabs = array();
 
         // Dictionaries
-	    if (! isset($conf->recurringevent->enabled))
+	    if (!isModEnabled('recurringevent'))
         {
         	$conf->recurringevent=new stdClass();
         	$conf->recurringevent->enabled=0;
