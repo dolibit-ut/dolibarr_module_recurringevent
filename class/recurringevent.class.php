@@ -433,7 +433,7 @@ class RecurringEvent extends SeedObject
             if (
                 $this->frequency != $object->frequency
                 || $this->frequency_unit != $object->frequency_unit
-                || array_diff($this->weekday_repeat, $object->weekday_repeat)
+                || array_diff((array) $this->weekday_repeat, (array) $object->weekday_repeat)
                 || $this->end_type != $object->end_type
                 || $this->end_date != $object->end_date
                 || $this->end_occurrence != $object->end_occurrence
@@ -461,7 +461,7 @@ class RecurringEvent extends SeedObject
             if (
                 $this->frequency != $this->oldcopy->frequency
                 || $this->frequency_unit != $this->oldcopy->frequency_unit
-                || array_diff($this->weekday_repeat, $this->oldcopy->weekday_repeat)
+                || array_diff((array) $this->weekday_repeat, (array) $this->oldcopy->weekday_repeat)
                 || $this->end_type != $this->oldcopy->end_type
                 || $this->end_date != $this->oldcopy->end_date
                 || $this->end_occurrence != $this->oldcopy->end_occurrence
@@ -516,13 +516,13 @@ class RecurringEvent extends SeedObject
             }
             else
             {
-                if (!in_array(date('w', $current_date), $this->weekday_repeat))
+                if (!in_array(date('w', $current_date), (array) $this->weekday_repeat))
                 {
                     // Besoin de modifier la date de début et fin de l'event master
                     while ($current_date = strtotime('+1 day ', $current_date))
                     {
                         $weekday_index = date('w', $current_date);
-                        if (in_array($weekday_index, $this->weekday_repeat))
+                        if (in_array($weekday_index, (array) $this->weekday_repeat))
                         {
                             $actioncommMaster->datep = $current_date;
                             if (!empty($delta)) {
@@ -542,7 +542,7 @@ class RecurringEvent extends SeedObject
                     {
                         if ($current_date > $this->end_date) break;
                         $weekday_index = date('w', $current_date);
-                        if (in_array($weekday_index, $this->weekday_repeat))
+                        if (in_array($weekday_index, (array) $this->weekday_repeat))
                         {
                             $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                         }
@@ -555,7 +555,7 @@ class RecurringEvent extends SeedObject
                     {
                         $current_date = strtotime('+1 day ', $current_date);
                         $weekday_index = date('w', $current_date);
-                        if (in_array($weekday_index, $this->weekday_repeat))
+                        if (in_array($weekday_index, (array) $this->weekday_repeat))
                         {
                             $this->createRecurring($user, $notrigger, $actioncommMaster, $current_date, $delta);
                             $end_occurrence--;
