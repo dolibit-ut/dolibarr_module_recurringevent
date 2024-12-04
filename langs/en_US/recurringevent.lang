@@ -13,11 +13,21 @@ ParamDesc  = Parameter Description
 ParamHelp  = Parameter Help
 
 
+# WeekdaysShort
+RecurringEventMondayShort = Mon
+RecurringEventTuesdayShort = Tue
+RecurringEventWednesdayShort = Wed
+RecurringEventThursdayShort = Thu
+RecurringEventFridayShort = Fri
+RecurringEventSaturdayShort = Sat
+RecurringEventSundayShort = Sun
+
+
 # Weekdays
-RecurringEventMondayShort = Monday
-RecurringEventTuesdayShort = Tuesday
-RecurringEventWednesdayShort = Wednesday
-RecurringEventThursdayShort = Thursday
-RecurringEventFridayShort = Friday
-RecurringEventSaturdayShort = Saturday
-RecurringEventSundayShort = Sunday
+# RecurringEventMondayShort = Monday
+# RecurringEventTuesdayShort = Tuesday
+# RecurringEventWednesdayShort = Wednesday
+# RecurringEventThursdayShort = Thursday
+# RecurringEventFridayShort = Friday
+# RecurringEventSaturdayShort = Saturday
+# RecurringEventSundayShort = Sunday
